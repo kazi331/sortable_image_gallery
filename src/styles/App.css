@@ -1,8 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -13,8 +21,78 @@ body {
   background-color: rgba(239, 249, 255, 0.911);
 
   /* center main content */
+  display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-family: "Poppins", sans-serif;
+}
+
+.confirm-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px;
+  -webkit-box-shadow: 0 0 10px 4px #cecece;
+  box-shadow: 0 0 10px 4px #cecece;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.confirm-modal p.title {
+  font-size: 0.9rem;
+  color: #393939;
+  margin-bottom: 5px;
+}
+.confirm-modal p.desc {
+  font-size: 0.8rem;
+  color: #393939;
+}
+.confirm-modal .action {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 10px;
+}
+.confirm-modal .action button {
+  color: #444444;
+  border: 1px transparent solid;
+  padding: 8px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.confirm-modal .action .cancel:hover {
+  background-color: rgb(204, 204, 204);
+}
+.confirm-modal .action .delete {
+  background-color: rgba(255, 0, 0, 0.192);
+  color: rgb(201, 18, 18);
+}
+.confirm-modal .action .delete:hover {
+  background-color: rgba(255, 0, 0, 0.329);
+}
+
+.confirm-modal .action .delete:active {
+  background-color: rgba(255, 0, 0, 0.425);
 }

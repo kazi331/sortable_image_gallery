@@ -93,6 +93,7 @@ const Gallery = () => {
             <SortableContext items={data} strategy={rectSortingStrategy} >
                 <Header
                     selected={selected}
+                    setSelected={setSelected}
                     selectAll={selectAll}
                     handleDelete={handleDelete}
                     checked={selected.length === data.length}

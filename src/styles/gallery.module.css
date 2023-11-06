@@ -1,8 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* MAIN WRAPPER */
 .wrapper {
   padding: 20px;
   width: 90vw;
   /* min-width: 90%; */
+  -webkit-box-shadow: 0px 0px 13px rgb(233, 233, 233);
   box-shadow: 0px 0px 13px rgb(233, 233, 233);
   background-color: white;
   border-radius: 10px;
@@ -12,11 +20,16 @@
 .bar {
   margin-bottom: 20px;
   height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 0 10px;
-  box-shadow: 0px 0px 5px rgb(224, 224, 224);
+  -webkit-box-shadow: 0px 0px 5px rgb(206, 206, 206);
+  box-shadow: 0px 0px 5px rgb(206, 206, 206);
   position: sticky;
   top: 10px;
   z-index: 3;
@@ -24,32 +37,61 @@
   overflow: hidden;
 }
 .flex {
+  -webkit-transition: -webkit-transform 0.2s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .bar_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .title {
   color: rgb(48, 48, 48);
   padding: auto 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .bar_selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
   position: relative;
+  color: #333;
+  font-size: 14px;
 }
 .bar_selected input {
   width: 20px;
@@ -64,29 +106,44 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .bar_container button:hover {
   background-color: rgba(255, 0, 0, 0.315);
 }
 .bar_container button:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
 
 /* GRID CONTAINER  */
 .container {
   /* gridbox to maintain layout */
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 1fr 20px 1fr 20px 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 20px;
   grid-auto-rows: minmax(auto, 1fr);
   grid-auto-columns: minmax(auto, 1fr);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
 /* make first/featured item 2x larger * MARK AS FEATURED IMAGE */
 .itemWrapper:first-child {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: 1 / 1 / 3 / 3;
   /* control max width/height when items are low in quantity */
   max-height: 32rem;
@@ -96,6 +153,8 @@
 /* ITEM WRAPPER  */
 .itemWrapper {
   position: relative;
+  -webkit-box-shadow: 0px 0px 8px rgb(224, 224, 224),
+    0px 0px 1px rgb(240, 240, 240);
   box-shadow: 0px 0px 8px rgb(224, 224, 224), 0px 0px 1px rgb(240, 240, 240);
   border-radius: 10px;
   overflow: hidden;
@@ -105,6 +164,7 @@
 .item img {
   width: 100%;
   height: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
   display: block;
   margin: 0;
@@ -112,7 +172,11 @@
 }
 
 .item:first-child {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   grid-row: 1/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
 }
 
@@ -124,7 +188,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+  cursor: -webkit-grab;
   cursor: grab;
+  -webkit-transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+  -o-transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
   transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 }
 
@@ -135,6 +202,11 @@
   visibility: hidden;
 }
 .itemWrapper:hover label {
+  background: -o-radial-gradient(
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.3)
+  );
   background: radial-gradient(
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.2),
@@ -150,10 +222,19 @@
 .addItem {
   border: 1px dashed darkgray;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   color: rgb(102, 100, 100);
   cursor: pointer;
@@ -164,13 +245,26 @@
   opacity: 0.5;
 }
 .addItem p {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  font-size: 0.8rem;
 }
 /* EMPTY BLOCK */
 .empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 10px;
   color: rgb(102, 100, 100);
@@ -195,8 +289,14 @@
   position: relative;
   width: 24px;
   height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border: 2px solid transparent;
   border-radius: 50%;
@@ -210,6 +310,8 @@
   border-radius: 50%;
   color: gray;
   scale: 0.5;
+  -webkit-transition: all ease-in 0.2s;
+  -o-transition: all ease-in 0.2s;
   transition: all ease-in 0.2s;
 }
 .itemWrapper label:hover .checkbg {
