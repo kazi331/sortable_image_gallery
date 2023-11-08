@@ -32,8 +32,8 @@ const Header = ({ selected, handleDelete, selectAll, checked, setSelected }: pro
     }
 
     const style = {
-        "WebkitTransform": selected.length > 0 ? 'translateY(0.5rem)' : 'translateY(-2.8rem)',
-        "msTransform": selected.length > 0 ? 'translateY(0.5rem)' : 'translateY(-2.8rem)',
+        "-webkit-transform": selected.length > 0 ? 'translateY(0.5rem)' : 'translateY(-2.8rem)',
+        "-ms-transform": selected.length > 0 ? 'translateY(0.5rem)' : 'translateY(-2.8rem)',
         "transform": selected.length > 0 ? 'translateY(0.5rem)' : 'translateY(-2.8rem)'
     }
 

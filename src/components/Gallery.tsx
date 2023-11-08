@@ -111,7 +111,7 @@ const Gallery = () => {
                                         selected={selected} />
                                 )) : <Empty />
                         }
-                        <AddItem setData={setData} />
+                        <AddItem />
                     </div>
                 </div>
             </SortableContext>

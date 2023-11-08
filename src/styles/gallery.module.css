@@ -125,7 +125,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 20px 1fr 20px 1fr;
-  /* grid-template-rows: repeat(auto-fit, minmax(12rem, 1fr)); */
+  grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 20px;
   grid-auto-rows: minmax(auto, 1fr);
